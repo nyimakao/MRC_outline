@@ -1,0 +1,1124 @@
+%% LyX 2.1.4 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[11pt,oneside,reqno]{amsart}
+\usepackage{geometry}
+\geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+\usepackage{amstext}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{esint}
+\usepackage{color}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\theoremstyle{theorem}
+\newtheorem{thm}{\protect\theoremname}
+  \theoremstyle{plain}
+  \newtheorem{fact}[thm]{\protect\factname}
+  \theoremstyle{definition}
+  \newtheorem{defn}[thm]{\protect\definitionname}
+  \theoremstyle{plain}
+  \newtheorem{lem}[thm]{\protect\lemmaname}
+  \theoremstyle{remark}
+  \newtheorem{rem}[thm]{\protect\remarkname}
+  \theoremstyle{plain}
+  \newtheorem{cor}[thm]{\protect\corollaryname}
+  \theoremstyle{plain}
+  \newtheorem*{thm*}{\protect\theoremname}
+  \theoremstyle{plain}
+  \newtheorem{prop}[thm]{\protect\propositionname}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+
+\input{general-preamble}          
+
+
+%\thanks{Kao gratefully acknowledges partial support from the National Science Foundation Postdoctoral Research Fellowship and from U.S. National Science Foundation grants DMS 1107452, 1107263, 1107367 "RNMS: GEometric structures And Representation varieties" (the GEAR Network).}
+
+\keywords{}
+
+\subjclass[2000]{}
+\thanks{This material is based upon work supported by the National Science Foundation (NSF) under Grant Number DMS 1641020. The second author gratefully acknowledges support from the NSF Postdoctoral Research Fellowship under Grant Number DMS 1703554.}
+
+\def\a{\alpha}
+\def\b{\beta}
+\def\s{\sigma}
+\def\Si{\Sigma}
+\def\G{\Gamma}
+\def\g{\gamma}
+\def\l{\lambda}
+\def\L{\Lambda}
+
+\def\D{\mathbb{D}}
+\def\R{\mathbb{R}}
+\def\C{\mathbb{C}}
+\def\H{\mathbb{H}}
+
+\def\pa{\partial}
+\def\ep{\varepsilon}
+
+\def\T{\mathcal{T}}
+\def\F{\mathcal{F}}
+
+\def\lt{\lambda_{T}}
+\def\ut{T^1M}
+\def\gt{G_T}
+
+\makeatother
+
+  \providecommand{\corollaryname}{Corollary}
+  \providecommand{\definitionname}{Definition}
+  \providecommand{\factname}{Fact}
+  \providecommand{\lemmaname}{Lemma}
+  \providecommand{\propositionname}{Proposition}
+  \providecommand{\remarkname}{Remark}
+  \providecommand{\theoremname}{Theorem}
+\providecommand{\theoremname}{Theorem}
+
+\begin{document}
+
+\title{Outlines}
+
+\maketitle
+\noindent \today
+
+
+\section{Set up}
+\begin{itemize}
+\item $S$ is a closed rank 1 Riemannian surface without focal point. 
+\item $\mathcal{F}= (f_t)$ where $f_{t}:T^{1}S\to T^{1}S$ is the geodesic flow. 
+\item \textit{Singular set} ${\rm Sing}:=\{v\in T^{1}S:\ E^{u}(v)\cap E^{u}(v)\neq\emptyset\}$. 
+\item \textit{Regular set} ${\rm Reg}:=T^{1}S\backslash{\rm Sing}$. 
+\item On $T^{1}S$, Knieper metric $d_{K}:=\max\{d(\gamma_{v}(t),\gamma_{w}(t)):t\in[0,1]\}$.
+It is related to $d^{u}$, the metric on the local unstable leaf,
+by $d_{K}(v,w)\leq e^{\Lambda}d^{u}(v,w)$. \end{itemize}
+
+\begin{thm}[Main Theorem]\label{thm: main}
+Let $\varphi \colon T^1S \to \mathbb{R}$ be a H\"older potential satisfying $P(\rm Sing, \varphi)<P(\rm Reg)$. Then, $\varphi$ has a unique equilibrium state $\mu_\varphi$. Moreover, $\mu_\varphi$ is fully supported, is the weak$^*$ limit of the weighted regular periodic orbit, and satisfies $\mu_\varphi(\rm Reg) = 1$.
+\end{thm}
+
+\begin{thm}[Main Theorem]\label{thm: main}
+Let $\varphi^u \colon T^1S \to \mathbb{R}$ be the geometric potential given by $\varphi^u(v) = -\lim\limits_{t \to 0}\frac{1}{t} \log \det(df_t|_{E^u_v})$. Then, $q\varphi^u$ has a unique equilibrium state $\mu_q$ for all $q \in (-\infty,1)$. Moreover, $\mu_q$ is fully supported, is the weak$^*$ limit of the weighted regular periodic orbit, and satisfies $\mu_\varphi(\rm Reg) = 1$.
+\end{thm}
+
+\begin{thm}[as Theorem 3.1 \cite{BCFT2017}]
+Let $\varphi:T^{1}S\to\mathbb{R}$ be continuous, If $P({\rm Sing})<P(\varphi)$,
+and for all $\eta>0$ the potential $\varphi$ has the Bowen property
+on 
+\[
+G_{T}(\eta)=\{(v,t)\colon\ \frac{1}{\tau}\int_{0}^{\tau}\lambda_{T}(f_{s}v)ds\geq\eta{\rm \ {\rm and\ }}\frac{1}{\tau}\int_{0}^{\tau}\lambda_{T}(f_{-s}f_{t}v)ds\geq\eta\ \forall\tau\in[0,t]\},
+\]
+then the geodesic flow has a unique equilibrium stat for $\varphi$. \end{thm}
+\begin{fact}
+$\ $
+\begin{enumerate}
+\item ${\rm (}$cf. \cite{Hurley:1986km}${\rm )}$The geodesic flow $f_{t}$
+is topologically transitive.
+\item ${\rm (}$cf. Lemma 6.8 \cite{Gelfert:2017tx}${\rm )}$ For surface
+cases, $h_{top}({\rm Sing})=0$.
+\item ${\rm Sing}$ is closed and flow invariant.
+\item Reg is dense in $T^1S$.
+\end{enumerate}
+\end{fact}
+
+Abstract theorem of Climenhaga-Thompson establishes the unique equilibrium state:
+\begin{thm}\cite{Climenhaga:2016ut}\label{thm: CT abstract thm} Let $(X,\mathcal{F})$ be a continuous flow on a compact metric space, and $\varphi$ be a continuous potential. Suppose $P^\perp_\text{exp}(\varphi)<P(\varphi)$ and that $X\times \mathbb{R}^+$ admits a decomposition $(\mathcal{P},\mathcal{G},\mathcal{S})$ with the following properties:
+\begin{enumerate}
+\item $\mathcal{G}$ has the weak specification property;
+\item $\varphi$ has Bowen property on $\mathcal{G}$;
+\item $P([\mathcal{P}]\cup[\mathcal{S}],\varphi)<P(\varphi)$.
+\end{enumerate} 
+Then $(X,\mathcal{F},\varphi)$ has a unique equilibrium state.
+\end{thm}
+
+In our setting of $(T^1S,\mathcal{F})$, we will describe the decomposition on the space of orbits $T^1S \times \mathcal{R}^+$, and verify the assumptions of the abstract Theorem \ref{thm: CT abstract thm} for a H\"older potential $\varphi \colon T^1S \to \mathbb{R}$ satisfying the pressure gap $P(\text{Sing},\varphi)<P(\varphi)$. 
+
+\section{Pressure Gap and $\lambda_{T}$}
+In what follows, $\varphi \colon T^1S \to \mathbb{R}$ is a H\"older continuous potential with the pressure gap $P(\rm Sing, \varphi) < P(\rm Reg)$; H\"older continuity of $\varphi$ however won't play a role until the section in Bowen property. 
+
+Let $\lambda^u(v)$ be the eigenvalue of $\mathcal{U}^u(v)$, and $\lambda^s(v)=\lambda^u(-v)$.
+We define
+\[
+\lambda_{T}^{u}(v):=\int_{-T}^{T}\lambda^{u}(f_{t}v)dt.
+\]
+\begin{defn}
+For any $T,\eta \in \mathbb{R}^+$, we define the following sets. 
+\begin{enumerate}
+\item $\lt(v):=\min(\lt^{u}(v),\lt^{s}(v))$ defines a continuous nonnegative function on $T^1S$.
+\item $B_{T}(\eta):=\{(v,t)\colon\ \frac{1}{t}\int_{0}^{t}\lambda_{T}(f_{s}v)ds<\eta\}$.
+\item $G_{T}(\eta):=\{(v,t)\colon\ \frac{1}{\tau}\int_{0}^{\tau}\lambda_{T}(f_{s}v)ds\geq\eta{\rm \ {\rm and\ }}\frac{1}{\tau}\int_{0}^{\tau}\lambda_{T}(f_{-s}f_{t}v)ds\geq\eta\ \forall\tau\in[0,t]\}.$
+\item ${\rm Reg}_{T}(\eta):=\{v\in T^{1}M:\ \lambda_{T}(v)\geq\eta\}.$
+\end{enumerate}
+\end{defn}
+
+\begin{fact}
+$\ $
+\begin{enumerate}
+\item ${\rm Reg}_{T}(\eta)\subset T^{1}M$ is compact.
+\item $G_{T}(\eta)\subset T^{1}M\times\mathbb{R}^+$ is closed.
+\end{enumerate}
+\end{fact}
+Note that $v\in\text{Sing}$ implies $\lt(v)=0$ for all $T$. Conversely,
+we have:
+\begin{lem}
+\label{lem:lamb_T_and_sing} If $\lt(v)=0$ for all $T$, then $v\in\text{Sing}$. 
+\end{lem}
+\begin{proof}
+
+\end{proof}
+
+
+
+We now describe how to obtain the decomposition of $T^1S \times \mathbb{R}^+$ into $(\mathcal{P},\mathcal{G},\mathcal{S})$.
+First, we shall choose the suitable $T,\eta>0$ to exploit the pressure gap of $\varphi$.
+
+
+\begin{lem}\label{lem: pressure gap}
+There exists $T,\eta>0$ such that $P([B_T(\eta)],\varphi)<P(\varphi)$. \textcolor{blue}{explain what each notation means.}
+\end{lem}
+\begin{proof}
+Let $D$ be the metric compatible with the weak-$*$ topology on the
+space of $\mathcal{F}$-invariant probability measures $\mathcal{M}(T^1S)$. Fix $\Delta<P(\varphi)-P(\text{Sing},\varphi)$
+and choose $\epsilon>0$ such that 
+$$\mu \in \mathcal{M}(T^1S) \text{ with }D(\mu,\mathcal{M}(\text{Sing}))<\epsilon \implies
+P_{\mu}(\varphi)-P(\text{Sing})<\Delta.$$
+The existence of such $\epsilon$ is guaranteed because the entropy map $\mathcal{M}(T^1S) \ni \mu \mapsto h_\mu(f)$ is upper semi-continuous.
+From Lemma \ref{lem:lamb_T_and_sing}, we have 
+\[
+\mathcal{M}(\text{Sing})=\bigcap\limits _{\substack{\eta>0,T>0}
+}\mathcal{M}_{\lt}(\eta),
+\]
+where $\mathcal{M}_{\lt}(\eta) = \{\mu \in \mathcal{M}(T^1S) \colon \int \lt d\mu \leq \eta\}$.
+Hence, we can find $T,\eta>0$ such that
+\[
+D(\mathcal{M}(\text{Sing}),\mathcal{M}_{\lt}(\eta))<\epsilon.
+\]
+In particular, for any $\mu\in M_{\lambda_{T}}(\eta)$, we have 
+\[
+P_{\mu}(\varphi)<P(\text{Sing},\varphi)+\Delta.
+\]
+
+
+We can verify that for such choice of $\eta$ and $T$, the pressure gap $P([B_T(\eta)],\varphi)<P(\varphi)$ holds: 
+\[
+P([B_{T}(\eta)],\varphi)\leq\sup\limits _{\mu\in M([B_{T}(\eta)])}P_{\mu}(\eta)\leq\sup\limits _{\mu\in M_{\lambda_{T}}(\eta)}P_{\mu}(\varphi)\leq\Delta+P(\text{Sing},\varphi)<P(\varphi).
+\]
+\end{proof}
+
+We will fix $T,\eta$ from the Lemma once and for all. We define
+\begin{equation}\label{eq: decomposition}
+\mathcal{G} := G_T(\eta)~~ \text{ and }~~\mathcal{P} = \mathcal{S}:= B_T(\eta).
+\end{equation}
+Given an orbit segment $(x,t) \in T^1S\times \mathbb{R}^+$, there exists a unique $p,g,s \geq 0$ such that $t = p+g+s$, and 
+$$(x,p) \in B_T(\eta), ~~~(f^px,g) \in G_T(\eta), \text{ and } (f^{p+g}x,s) \in B_T(\eta).$$
+
+The foregoing Lemma \ref{lem: pressure gap} establishes the Pressure gap assumption in Theorem \ref{thm: CT abstract thm} for the decomposition \eqref{eq: decomposition}. The following lemma establishes that the pressure of the obstruction to expansivity is strictly less than the entire pressure:
+
+\begin{lem}
+The pressure gap condition on $\varphi$ implies $P^\perp_\text{exp}(\varphi) < P(\rm Sing,\varphi)$.
+\end{lem}
+\begin{proof}
+Flat strip theorem. As in BCFT section 5.3.
+\end{proof}
+
+In the subsequent sections, we will establish the remaining assumptions of Theorem \ref{thm: CT abstract thm}.
+\section{Specification}
+\textcolor{blue}{I think it might be good idea to quote details of specification and other properties of the unique eq states from BCFT rather than almost copying the argument; of course we should explain the differences.}
+
+
+A collection $C\subset X\times[0,\infty)$ of orbit segments has \textit{specification}
+at scale $\rho>0$ if there is $\tau=\tau(\rho)$ such that for every
+$(x_{1},t_{1}),\ldots,(x_{n},t_{n})\in C$ there exists $y\in X$
+and a sequence of jumping times $\tau_{1},\ldots,t_{n-1}\in[0,\tau]$
+such that for $s_{0}=\tau_{0}=0$ and $s_{j}=\sum\limits _{i=1}^{j}t_{i}+\sum\limits _{i=1}^{j-1}\tau_{i}$,
+we have 
+\[
+f_{s_{j-1}+\tau_{j-1}}(y)\in B_{(}t_{j})(x_{j},\rho)
+\]
+for every $j\in\{1,\ldots,n\}$. If $C$ has specification at all
+scale, then we say $C$ has specification.
+
+For $v\in T^{1}M$ and $T\in\mathbb{R}$, we define $\lambda_{T}^{u}(v)$
+as in the OUTLINES. Given $\varphi\in C(X)$ with $P(\varphi)>P(\text{Sing})$,
+we fix $\eta,T>0$ once and for all such that the pressure of $B_{T}(\eta)$
+is strictly smaller than the pressure of the entire system.
+
+Let $C_{T}(\eta):=\{(v,t)\colon v,f_{t}v\in\text{Reg}_{T}(\eta)\}$
+\begin{thm}
+Given $\eta,T>0$, $C_{T}(\eta)$ has specification. Hence, so does
+$G_{T}(\eta)$. 
+\end{thm}
+We collect relevant lemmas to prove the specification.
+\begin{lem}[Lemma 3.10]
+Given $\eta,T>0$, there exists $\theta>0$ so that for any $v\in{\rm Reg}_{T}(\eta)$,
+we have $\measuredangle(E^{u}(f_{t}v),E^{s}(f_{t}v))\geq\theta$ for
+any $-T\leq t\leq T$. \end{lem}
+\begin{proof}
+Assume the contrary. Then there exists $\{(v_{i},t_{i})\}_{i\in\mathbb{N}}\subset{\rm Reg}_{T}(\eta)\times[-T,T]$
+such that $\measuredangle(E^{s}(f_{t_{i}}v_{i}),E^{u}(f_{t_{i}}v_{i}))\to0$.
+Since ${\rm Reg}_{T}(\eta)\times[-T,T]$ is compact, there exist subsequences
+$t_{i_{j}}\to t_{0}$, and $v_{i_{j}}\to v_{0}$ such that $\measuredangle(E^{s}(f_{t_{0}}v_{0}),E^{u}(f_{t_{0}}v_{0}))=0$,
+that is, $f_{t_{0}}v_{0}\in{\rm Sing}$. On the other hand, ${\rm Reg}_{T}(\eta)$
+is closed so $v_{0}\in{\rm Reg}_{T}(\eta)$. However, this is a contradiction
+because $\text{Sing}$ is $f_{t}$-invariant. 
+\end{proof}
+%\begin{proof}%Assume the contrary. Then there exists $\{(v_{i},t_i)\}_{i\in\mathbb{N}}\subset{\rm Reg}_{T}(\eta) \times [-T,T]$%such that $\measuredangle(E^{s}(f_{t_i}v_{i}),E^{u}(f_{t_i}v_{i}))\to0$. Noticing%that for such $v_{i}{\rm \in{\rm Reg}}_{T}(\eta)$, by the definition%of ${\rm Reg}_{T}(\eta)$, there exists $s_{i}\in[-T,T]$ so that%$\lambda(f_{s_{i}}v_{i})\geq\frac{\eta}{2T}$. Since ${\rm Reg}_{T}(\eta)\times[-T,T] \times [-T,T]$%is compact, there exist subsequences $s_{i_{j}}\to s$, $t_{i_j} \to t$, and $v_{i_{j}}\to v$%such that $\measuredangle(E^{s}(f_tv),E^{u}(f_tv))=0$, that is, $f_tv\in{\rm Sing}$.%On the other hand, $\lambda(f_{s}(v))\geq\frac{\eta}{2T}$, which implies%that $f_{s}(v)\not\in\text{Sing}$. However, this is a contradiction%because $\text{Sing}$ is invariant. %\end{proof}
+\begin{cor}
+There exists $\delta_{0}>0$ and $\kappa\geq1$ such that the foliations
+$W^{cs}$ and $W^{u}$ have LPS with scale $\delta\in(0,\delta_{0})$
+with constant $\kappa$. 
+\end{cor}
+%\begin{lem} \label{lem:coro45} Given $\eta,T>0$, there exists $\delta>0$ so that%if $v,w\in{\rm Reg}_{T}(\eta)$, and $v',w'$ satisfy $d_{K}(v,v')<\delta$,%and $d_{K}(w,w')<\delta$, then for any $\rho\in(0,\delta]$, there%exists $L$ so that %\[%\left(\bigcup_{0\leq t\leq L}f_{t}(W_{\rho}^{u}(v')\right)\cap W_{\rho}^{cs}(w')\neq\emptyset.%\]%\end{lem}
+\begin{lem}
+\label{lem: spec bracket} Let $\eta,T>0$ be given. Then, there exists
+$\delta>0$ such that for any $\rho\in(0,\delta)$, there exists $a=a(\delta,\rho)>0$
+such that the following holds: for any $u,v\in N_{\delta}^{K}(\text{Reg}_{T}(\eta))$,
+there exists $\tau\in(0,a)$ and $[v,w]_{\tau}\in T^{1}M$ such that
+$f_{\tau}([v,w]_{\tau})\in W_{\rho}^{cs}(w)$ and $[v,w]_{\tau}\in W_{\rho}^{u}(v)$. 
+\end{lem}
+Fix $(v_{0},t_{0})\in C_{T}(\eta)$, $\alpha>1$, and $\epsilon>0$
+such that $W_{\epsilon}^{s}(v_{0})$, and $W_{\epsilon}^{u}(f_{t_{0}}v_{0})$
+belong to $\text{Reg}_{T}(\eta/2)$ and that for any $w,w'\in T^{1}M$
+with $d_{t_{0}}(w,v_{0})<\epsilon$ and $f_{t_{0}}w'\in W_{\epsilon}^{u}(f_{t_{0}}w)$,
+we have 
+\[
+d^{u}(f_{t_{0}}w,f_{t_{0}}w')\geq\alpha d^{u}(w,w').
+\]
+
+
+Following the proof in the original BCFT, let $0<\rho<\min(\delta,\epsilon)$
+be the specification scale where $\delta$ is from Lemma \ref{lem: spec bracket},
+and set $\rho'=\rho/(6e^{\Lambda}\sum\limits _{i=1}^{\infty}\alpha^{-i})$.
+Obtain $a=a(\delta,\rho')$ from Lemma \ref{lem: spec bracket} applied
+to $\rho'$. We show that the specification on $C_{T}(\eta)$ holds
+with transition time $2a+t_{0}$.
+
+Let $(v_{1},t_{1}),\ldots,(v_{k},t_{k})\in C_{T}(\eta)$. For each
+$j$, we will construct $(w_{j},s_{j})$ that shadows $(v_{1},t_{1})$,
+$(v_{0},t_{0})$, $(v_{2},t_{2})$, $(v_{0},t_{0})$, $(v_{3},t_{3})$,
+$(v_{0},t_{0})$,$\ldots,(v_{j},t_{j})$ in order. In doing so, we
+will define intermediate $u_{j}$'s as well.
+\begin{enumerate}
+\item Set $w_{1}=v_{1}$ and $s_{1}=t_{1}$. 
+\item Using Lemma \ref{lem: spec bracket}, %at $f_{s_1}w_1$ and $v_0$
+find $[f_{s_{1}}w_{1},v_{0}]_{\tau_{1}}\in W_{\rho'}^{u}(f_{s_{1}}w_{1})$
+with $0<\tau_{1}<a$, and define $u_{1}:=f_{-s_{1}}[f_{s_{1}}w_{1},v_{0}]_{\tau_{1}}\in W_{\rho'}^{u}(v_{1})$
+and $s_{1}':=s_{1}+\tau_{1}+t_{0}$. Since $d^{s}$ is non-increasing
+in forward time, we have $f_{s_{1}'}u_{1}\in W_{\rho'}^{cs}(f_{t_{0}}v_{0})$.
+
+
+Applying Lemma \ref{lem: spec bracket} again, %$f_{s_1+\tau_1+t_0} u_1$ and $v_2$ we
+get $[f_{s_{1}'}u_{1},v_{2}]_{\tau_{1}'}\in W_{\rho'}^{u}(f_{s'}u_{1})$.
+Setting $s_{2}:=s_{1}'+\tau_{1}'+t_{2}$ and $w_{2}:=f_{-s_{1}'}[f_{s_{1}'}u_{1},v_{2}]_{\tau_{1}'}$,
+we have $w_{2}\in W_{\rho'}^{u}(u_{1})$ and $f_{s_{2}}w_{2}\in W_{\rho'}^{cs}(f_{t_{2}}v_{2})$.
+
+
+So far, both $u_{1}$ lies on $W_{\rho'}^{u}(v_{1})$ and $w_{2}$
+lies on $W_{\rho'}^{u}(u_{1})$. By definition, $f_{s_{1}'}w_{2}\in W_{\rho'}^{u}(f_{s_{1}'}u_{1})$.
+Moreover, $f_{s_{1}+\tau_{1}}(u_{1})\in W_{\rho'}^{cs}(v_{0})$ which
+implies that $f_{s_{1}+\tau_{1}}u_{1}\in B_{t_{0}}(v_{0},\rho')$.
+Hence (from the choice of $(v_{0},t_{0})$), at time $s_{1}+\tau_{1}=s_{1}'-t_{0}$,
+their $d^{u}$ distance must satisfy 
+\[
+d^{u}(f_{s_{1}+\tau_{1}}w_{2},f_{s_{1}+\tau_{1}}u_{1})\leq\rho'\alpha^{-1}.
+\]
+Since $d^{u}$ is non-increasing in backward time, the same inequality
+hold at time $s_{1}$: 
+\begin{equation}
+d^{u}(f_{s_{1}}w_{2},f_{s_{1}}u_{1})\leq\rho'\alpha^{-1}.\label{spec_1}
+\end{equation}
+
+
+
+%Consider them at time $s_1'$ (on $W^u(f_{s_1}w_1$)) Also, $f_{s_1+\tau_1+t_0}u_1$ lie on $W^u_{}$ and $f_{s_1}w_2$ lie on $W^u_{\rho'}()$ and % $d^u(f_{s_1}w_2, f_{s_1}u_1) \leq $
+
+\item Since $f_{s_{2}}w_{2}\in W_{\rho'}^{cs}(f_{t_{2}}v_{2})$, we apply
+Lemma \ref{lem: spec bracket} to find $[f_{s_{2}}w_{2},v_{0}]_{\tau_{2}}\in W_{\rho'}^{u}(f_{s_{2}}w_{2})$
+and define $u_{2}:=f_{-s_{2}}[f_{s_{2}}w_{2},v_{0}]_{\tau_{2}}$.
+Then, the following inequality 
+\[
+d^{u}(f_{s_{2}}u_{2},f_{s_{2}}w_{2})\geq\alpha d^{u}(f_{s_{1}}u_{2},f_{s_{1}}w_{2})
+\]
+holds because of the $d^{u}$ distance increase by factor of $\alpha$
+whenever the orbit passes near $(v_{0},t_{0})$. Since $f_{s_{2}}u_{2}\in W_{\rho'}^{u}(f_{s_{2}}w_{2})$,
+\begin{equation}
+\rho'\geq\alpha d^{u}(f_{s_{1}}u_{2},f_{s_{1}}w_{2}).\label{spec_1.5}
+\end{equation}
+We then define $s_{2}':=s_{2}+\tau_{2}+t_{0}$, and apply Lemma \ref{lem: spec bracket}
+to find $[f_{s_{2}'}u_{2},v_{3}]_{\tau_{2}'}$. Setting $w_{3}:=f_{-s_{2}'}[f_{s_{2}'}u_{2},v_{3}]_{\tau_{2}'}$
+and $s_{3}=s_{2}'+\tau_{2}'+t_{3}$, we have $f_{s_{3}}w_{3}\in W_{\rho'}^{cs}(f_{t_{3}}v_{3})$.
+\item Given $u_{j}$ and $w_{j+1}$ as well as $s_{j}'$ and $s_{j+1}$,
+we inductively define $u_{j+1}$ and $w_{j+2}$ by 
+\begin{align*}
+u_{j+1} & :=f_{-s_{j+1}}[f_{s_{j+1}}w_{j+1},v_{0}]_{\tau_{j+1}},\\
+w_{j+2} & :=f_{-s_{j+1}'}[f_{s_{j+1}'}u_{j+1},v_{j+2}]_{\tau_{j+1}'},
+\end{align*}
+where $s_{j+1}'=s_{j+1}+\tau_{j+1}+t_{0}$. The existence of $u_{j+1}$
+and $w_{j+2}$ follows from the same reasoning as in BCFT.
+
+
+Defining $s_{j+2}:=s_{j+1}'+\tau_{j+1}'+v_{j+2}$, we get similar
+inequalities as above: 
+\begin{align}
+d^{u}(f_{s_{j+1}}w_{j+1},f_{s_{j+1}}u_{j+1}) & \geq\alpha d^{u}(f_{s_{j}}w_{j+1},f_{s_{j}}u_{j+1}),\label{spec_2}\\
+d^{u}(f_{s_{j+1}}u_{j+1},f_{s_{j+1}}w_{j+2}) & \geq\alpha d^{u}(f_{s_{j}}u_{j+1},f_{s_{j}}w_{j+2}).\label{spec_3}
+\end{align}
+Both inequality follows from the $\alpha$ expansion coming from shadowing
+$(v_{0},t_{0})$ during time $s_{j}$ and $s_{j+1}$.
+
+
+Since $f_{s_{j+1}}u_{j+1}\in W_{\rho'}^{u}(f_{s_{j+1}}w_{j+1})$,
+there $d^{u}$ distance is bounded above by $\rho'$. Inductively
+applying the inequality \eqref{spec_2}, for any $1\leq i\leq j+1$,
+\begin{equation}
+d^{u}(f_{s_{i}}u_{j+1},f_{s_{i}}w_{j+1})\leq\rho'\alpha^{-(j+1-i)}.\label{spec_4}
+\end{equation}
+Note the inequality \eqref{spec_1.5} is a special case of \eqref{spec_4}.
+
+
+Moreover, we get $d^{u}(f_{s_{j+1}}u_{j+1},f_{s_{j+1}}w_{j+2})\leq\rho'\alpha^{-1}$
+from the same reasoning as \eqref{spec_1}. Inductively applying the
+inequality \eqref{spec_3}, for any $1\leq i\leq j+1$, 
+\begin{equation}
+d^{u}(f_{s_{i}}w_{j+2},f_{s_{i}}u_{j+1})\leq\rho'\alpha^{-(2+j-i)}.\label{spec_5}
+\end{equation}
+
+
+\item We claim that $(w_{k},s_{k})$ is the required orbit that $\rho$-shadows
+$(v_{i},t_{i})$ with transition time bounded above by $2a+t_{0}$.
+This amounts to showing that $d_{t_{i}}(f_{s_{i}}w_{k},v_{i})<\rho$
+for any $1\leq i\leq k$. From \eqref{spec_4} and \eqref{spec_5},
+\begin{align*}
+d^{u}(f_{s_{i}}w_{k},f_{s_{i}}w_{i}) & \leq\sum\limits _{j=i}^{k-1}d^{u}(f_{s_{j}}w_{k},f_{s_{j+1}}w_{i}),\\
+ & \leq\sum\limits _{j=i}^{k-1}\rho'\big(\alpha^{-(j-i)}+\alpha^{-(j+1-i)}\big),\\
+ & \leq\frac{\rho}{3e^{\Lambda}}.
+\end{align*}
+Since $d_{t}(v,w)\leq e^{\Lambda}d^{u}(f_{t}v,f_{t}w)$ for any $v,w\in T^{1}M$
+and $t>0$, this gives 
+\[
+d_{t_{i}}(f_{s_{i}-t_{i}}w_{k},f_{s_{i}-t_{i}}w_{i})\leq e^{\Lambda}d^{u}(f_{s_{i}}w_{k},f_{s_{i}}w_{i})\leq\frac{\rho}{3}.
+\]
+Also, $d_{t_{i}}(f_{s_{i}-t_{i}}w_{i},v_{i})\leq\rho'$ as $f_{s_{i}-t_{i}}w_{i}$
+lies on the center-stable manifold at $v_{i}$ with size $\rho'$
+from the construction. Summing these two bounds, 
+\[
+d_{t_{i}}(f_{s_{i}}w_{k},v_{i})\leq\frac{\rho}{3}+\rho'<\rho.
+\]
+Since $\rho$ can be taken arbitrarily small, this proves the specification
+property on $C_{T}(\eta)$. 
+\end{enumerate}
+
+\subsection{ELSE}
+
+For specification, when given finite number of good orbits, we will
+extend each end of every segment by $T$, and we will show that specification
+holds on the extended orbit segments.
+
+As in the paper, let $\delta$ be small enough so that if $d_{K}(v,w)<\delta e^{\Lambda}$,
+then $|\lambda_{T}(v)-\lambda_{T}(w)|<\frac{\eta}{2}$, and define
+$\tilde{\lambda}_{T}$ analogously as well. If $w\in B_{t}(v,\delta)$
+then $d_{K}(f_{s}v,f_{s}w)\leq\delta e^{\Lambda}$ and 
+\[
+\int_{0}^{t}\lambda_{T}(f_{s}w)ds\geq\int_{0}^{t}\tilde{\lambda}_{T}(f_{s}v)ds\geq\int_{0}^{t}\lambda_{T}(f_{s}v)ds-\frac{\eta}{2}t.
+\]
+
+\begin{lem}
+\label{alglem} Let $f:\mathbb{R}\rightarrow\mathbb{R}$ be a nonegative
+continuous function and $f_{T}(t):=\int_{-T}^{T}f(t+\tau)d\tau$.
+For every $a\leq b$, 
+\[
+\int_{a}^{b}f_{T}(t)dt\leq2T\int_{a-T}^{b+T}f(t)dt.
+\]
+\end{lem}
+\begin{proof}
+For $b-a\leq2T$, 
+\begin{eqnarray*}
+\int_{a}^{b}f_{T}(t)dt & = & \int_{a}^{b}\int_{-T}^{T}f(t+\tau)d\tau dt\\
+ & = & \int_{a-T}^{b-T}(\tau+T-a)f(\tau)d\tau+\int_{b-T}^{a+T}(b-a)f(\tau)d\tau+\int_{a+T}^{b+T}(b+T-\tau)f(\tau)d\tau\\
+ & \leq & (b-a)\int_{a-T}^{b-T}f(\tau)d\tau+(b-a)\int_{b-T}^{a+T}f(\tau)d\tau+(b-a)\int_{a+T}^{b+T}f(\tau)d\tau\\
+ & = & (b-a)\int_{a-T}^{b+T}f(\tau)d\tau\leq2T\int_{a-T}^{b+T}f(\tau)d\tau.
+\end{eqnarray*}
+For $b-a\geq2T$, 
+\begin{eqnarray*}
+\int_{a}^{b}f_{T}(t)dt & = & \int_{a}^{b}\int_{-T}^{T}f(t+\tau)d\tau dt\\
+ & = & \int_{a-T}^{a+T}(\tau+T-a)f(\tau)d\tau+\int_{a+T}^{b-T}2Tf(\tau)d\tau+\int_{b-T}^{b+T}(s+T-\tau)f(\tau)d\tau\\
+ & \leq & 2T\int_{a-T}^{a+T}f(\tau)d\tau+2T\int_{a+T}^{b-T}f(\tau)d\tau+2T\int_{b-T}^{b+T}f(\tau)d\tau=2T\int_{a-T}^{b+T}f(\tau)d\tau.
+\end{eqnarray*}
+
+\end{proof}
+Define $\tilde{\lambda}(v):=\max(0,\lambda(v)-\frac{\eta}{2})$ as
+in BCFT. Probably, the lemma in the form that I might find convenient
+to work with; 
+\begin{lem}
+\label{lem:38'} Given $\eta,T,\delta$ as above, and $(v,t)\in G_{T}(\eta)$,
+then every $v'\in B_{t}(v,\delta)$ satisfy $(v',t)\in G_{T}(\frac{\eta}{2})$.
+Moreover, there exists $C>0$ such that for every $l\in[0,T]$, $s\in[0,t+T]$,
+and $w,w'\in W_{\delta}^{s}(f_{-l}v)$, 
+\[
+d^{s}(f_{s+l}w,f_{s+l}w')\leq\min\Big(d^{s}(w,w'),C\cdot d^{s}(w,w')e^{-\frac{\eta}{2T}s}\Big).
+\]
+\end{lem}
+\begin{proof}
+When $s\in[0,t]$, then proceed as below (like lemma in Bowen property
+section). When $s\in[t,t+T]$, then we increase $C$ to take into
+account of extra length beyond $t$; something like $C'=C\cdot e^{\frac{\eta}{2T}\cdot T}$.
+\\
+ Or, we could put $\max(s,t)$ in place of $s$ in the inequality;
+perhaps this might be more convenient, because most cases we will
+only use $l=0$ and $s=t$. \end{proof}
+\begin{cor}
+In the setting of lemma above, when $l=0$ and $s=t$, 
+\[
+d^{s}(f_{t}w,f_{t}w')\leq C\cdot d^{s}(w,w')e^{-\frac{\eta}{2T}t}.
+\]
+\end{cor}
+\begin{lem}[Lemma 3.8]
+\label{lem:38} Given $\eta,T,\delta$ as above, $v\in T^{1}M$,
+and $w,w'\in W_{\delta}^{s}(v)$, we have the following for every
+$s\geq0$: 
+\[
+d^{s}(f_{s+2T}w,f_{s+2T}w')\leq d^{s}(w,w')\exp\left(-\frac{1}{2T}\int_{T}^{s+T}\tilde{\lambda}_{T}(f_{\tau}v)d\tau\right).
+\]
+Similarly, if $w,w'\in W_{\delta}^{u}(v)$, then for any $s\geq0$,
+\[
+d^{u}(f_{-s-2T}w,f_{-s-2T}w')\leq d^{u}(w,w')\exp\left(-\frac{1}{2T}\int_{T}^{s+T}\tilde{\lambda}_{T}(f_{-\tau}v)d\tau\right).
+\]
+\end{lem}
+\begin{proof}
+We define $J_{r}$ as in the proof of Lemma 3.8. By Lemma \ref{alglem}
+we have 
+\begin{eqnarray*}
+ &  & ||J_{r}(s+2T)||\leq||J_{r}(0)||\exp\left(-\int_{0}^{s+2T}\lambda(\dot{\zeta}_{r}(\tau))d\tau\right)\\
+ & \leq & ||J_{r}(0)||\exp\left(-\frac{1}{2T}\int_{T}^{s+T}\lambda_{T}(\dot{\zeta}_{r}(\tau))d\tau\right)\leq||J_{r}(0)||\exp\left(-\frac{1}{2T}\int_{T}^{s+T}\tilde{\lambda}_{T}(f_{\tau}v)d\tau\right).
+\end{eqnarray*}
+\end{proof}
+\begin{lem}[Lemma 3.9]
+\label{lem:39} Given $\eta,T,\delta$ as above, and $(v,t)$ in
+$G(\eta)$, then every $w\in B_{t}(v,\delta)$ has $(w,t)\in G(\frac{\eta}{2})$.
+Moreover, for every $w,w'\in W_{\delta}^{s}(f_{-T}v)$ and $0\leq s\leq t$,
+\[
+d^{s}(f_{s+2T}w,f_{s+2T}w')\leq d^{s}(w,w')\exp\left(-\frac{\eta s}{4T}\right).
+\]
+For every $w,w'\in f_{-t-2T}W_{\delta}^{u}(f_{t+T}v)$ and $0\leq s\leq t$,
+\[
+d^{u}(f_{s}w,f_{s}w')\leq d^{u}(f_{t+2T}w,f_{t+2T}w')\exp\left(-\frac{\eta(t-s)}{4T}\right).
+\]
+In particular, we have formula (4.4) in BCFT: 
+\[
+d^{u}(f_{t+2T}w,f_{t+2T}w')\geq\exp\left(\frac{\eta t}{4T}\right)d^{u}(w,w').
+\]
+\end{lem}
+\begin{proof}
+Since $w,w'\in W_{\delta}^{s}(f_{-T}v)$, 
+\begin{eqnarray*}
+ &  & d^{s}(f_{s+2T}w,f_{s+2T}w')\leq d^{s}(w,w')\exp\left(-\frac{1}{2T}\int_{0}^{s}\tilde{\lambda}_{T}(f_{\tau}v)d\tau\right)\\
+ & \leq & d^{s}(w,w')\exp\left(-\frac{1}{2T}\int_{0}^{s}\lambda_{T}(f_{\tau}v)d\tau+\frac{\eta s}{4T}\right)\leq d^{s}(w,w')\exp\left(-\frac{\eta s}{4T}\right).
+\end{eqnarray*}
+
+
+For $w,w'\in f_{-t-2T}W_{\delta}^{u}(f_{t+T}v)$, 
+\begin{eqnarray*}
+ &  & d^{u}(f_{s}w,f_{s}w')\leq d^{u}(f_{t+2T}w,f_{t+2T}w')\exp\left(-\frac{1}{2T}\int_{T}^{t-s+T}\tilde{\lambda}_{T}(f_{-\tau}f_{t+T}v)d\tau\right)\\
+ & \leq & d^{u}(f_{t+2T}w,f_{t+2T}w')\exp\left(-\frac{1}{2T}\int_{0}^{t-s}\tilde{\lambda}_{T}(f_{t-\tau}v)d\tau\right)\leq d^{u}(f_{t+2T}w,f_{t+2T}w')e^{-\frac{\eta(t-s)}{4T}}.
+\end{eqnarray*}
+
+\end{proof}
+Probably only use $s=t$ case for specification. 
+
+
+\section{Bowen Property}
+
+For Bowen property, consider the following lemma.
+\begin{lem}
+\label{lem:312} Given $\eta,T,\delta$ as above, and $(v,t)\in G_{T}(\eta)$,
+then every $v'\in B_{t}(v,\delta)$ satisfy $(v',t)\in G_{T}(\frac{\eta}{2})$.
+Moreover, there exists $C>0$ such that for any $(v,t)\in G_{T}(\eta)$,
+any $w,w'\in W_{\delta}^{s}(v)$, and any $0\leq s\leq t$, 
+\[
+d^{s}(f_{s}w,f_{s}w')\leq C\cdot d^{s}(w,w')e^{-\frac{\eta}{2T}s}.
+\]
+Similarly, for $w,w'\in f_{-s}W^{u}(f_{s}v)$ and $0\leq s\leq t$,
+we have 
+\[
+d^{u}(f_{s}w,f_{s}w')\leq C\cdot d^{u}(f_{t}w,f_{t}w')e^{-\frac{\eta}{2T}(t-s)}.
+\]
+\end{lem}
+\begin{proof}
+Let $K$ be the maximum of $\lambda$. Then, 
+\begin{align*}
+\int_{0}^{s}\lambda(f_{s}v)ds & =\int_{-T}^{s+T}\lambda(f_{s}v)d\eta-\int_{-T}^{0}\lambda(f_{s}v)ds-\int_{s}^{s+T}\lambda(f_{s}v)ds,\\
+ & \geq\frac{1}{2T}\int_{0}^{s}\lambda_{T}(f_{l})dl-2KT,\\
+ & \geq\frac{s\eta}{2T}-2KT.
+\end{align*}
+Then, $C:=e^{2KT}$ is the required constant $C$. \end{proof}
+\begin{rem}
+We could probably merge Lemmas \ref{lem:38}, \ref{lem:39}, and \ref{lem:312}
+into one lemma that applies to all three cases. 
+\end{rem}
+Lemmas in this section are exactly the same as their corresponding
+in \cite{BCFT2017}. The proofs follow verbatim. However, for the
+completeness we still give proofs there.
+\begin{lem}[Lemma 7.3]
+If $\varphi$ is H\"{o}lder along stable leaves (resp. unstable leaves),
+then $\varphi$ has the Bowen property along stable leaves (resp.
+unstable leaves) with respect to $G_{T}(\eta)$. \end{lem}
+\begin{proof}
+It is a direct consequence of Lemma \ref{lem:312}. We prove the stable
+leaves case, and for unstable leaves one uses the same argument.
+
+Let $(v,t)\in G_{T}(\eta)$, $\delta_{1}>0$ be as in Lemma \ref{lem:312}
+and $\delta_{2}>0$ be given by the H\"{o}lder continuity along stable
+leaves. Then for $\delta=\min\{\delta_{1},\delta_{2}\}$ and $w\in W_{\delta}^{s}(v)$,
+we have
+
+\begin{align*}
+\left|\Phi(v,t)-\Phi(w,t)\right| & \leq\int_{0}^{t}\left|\varphi(f_{\sigma}v)-\varphi(f_{\sigma}w)\right|{\rm d}\sigma\leq\int_{0}^{t}C_{1}\cdot d^{s}(f_{\sigma}v,f_{\sigma}w)^{\theta}{\rm d}\sigma\\
+ & \leq\int_{0}^{t}C_{1}\cdot\left(C_{2}\cdot d^{s}(v,w)\cdot e^{-\frac{\eta}{2T}\sigma}\right)^{\theta}{\rm d}\sigma\leq C_{1}\cdot C_{2}^{\theta}\cdot d^{s}(v,w)^{\theta}\int_{0}^{t}e^{\frac{-\eta\theta}{2T}\sigma}{\rm d}\sigma\\
+ & \leq C_{1}C_{2}^{\theta}\delta^{\theta}\frac{2T}{\eta\theta}.
+\end{align*}
+\end{proof}
+\begin{lem}[Lemma 7.4]
+Given $\eta>0$, suppose $\varphi$ has the Bowen property along
+stable leaves and unstable leaves with respect to $G_{T}(\eta)$.
+Then $\varphi:T^{1}M\to\mathbb{R}$ has the Bowen property on $G_{T}(\eta)$. \end{lem}
+\begin{proof}
+We first notice that since the curvature of horoshperes is uniformly
+bounded, $d_{K}$ and $d^{u}$ are equivalent on $W_{\delta}^{u}$
+when $\delta$ small enough. Hence, there exist $\delta_{0},C>0$
+such that $d^{u}(u,v)\leq Cd_{K}(u,v)$ for $v\in T^{1}M$ and $u\in W_{\delta_{0}}^{u}(v).$
+Let $\delta_{1}>0$ be the radius that guarantees any $(v,t)\in G_{T}(\eta)$
+the foliations $W^{u}$ and $W^{cs}$ have local product structure
+at scale $\delta_{1}$ with constant $\kappa$. Let $\delta_{2}>0$
+be the radius given in Lemma \ref{lem:312} that if $(v,t)\in G_{T}(\eta)$,
+then for $w\in W_{\delta_{2}}^{u}(v)$ we have $(w,t)\in G_{T}(\frac{\eta}{2})$.
+Let $\delta_{3},K>0$ be the constants from the Bowen property for
+$\varphi$ along stable and unstable leaves with respect to $G_{T}(\frac{\eta}{2})$.
+Without loss generality we may assume $\delta_{3}<\delta_{0}$.
+
+Let $\delta=\min\{\delta_{0},\delta_{1},\delta_{2},\frac{\delta_{3}}{2\kappa C},\frac{\delta_{3}}{\kappa}\}$,
+$(v,t)\in G_{T}(\eta)$, and $w\in B_{t}(v,\delta)$.
+
+By the LPS there exists $v'\in W_{\kappa\delta}^{u}\cap W_{\kappa\delta}^{cs}(v)$.
+We claim: $f_{t}(v')\in W_{\delta_{3}}^{u}(f_{t}w)$. However, we
+will prove this claim in the end of this proof. Moreover, there exists
+$\rho\in[-\kappa\delta,\kappa\delta]$ such that $f_{\rho}(v')\in W_{\kappa\delta}^{s}(v)\subset W_{\delta_{3}}^{s}(v)$.
+Thus assuming the claim and by the Bowen property we have 
+\[
+\left|\Phi(v,t)-\Phi(f_{\rho}v',t)\right|\leq K{\rm \ and}\ \left|\Phi(v',t)-\Phi(w,t)\right|\leq K.
+\]
+Hence, assuming the claim we have
+
+\begin{align*}
+\left|\Phi(v,t)-\Phi(w,t)\right| & \leq\left|\Phi(v,t)-\Phi(f_{\rho}v',t)\right|+\left|\Phi(f_{\rho}v',t)-\Phi(v',t)\right|+\left|\Phi(v',t)-\Phi(w,t)\right|\\
+ & \leq2K+2||\varphi||\cdot|\rho|.
+\end{align*}
+
+
+To see the claim, i.e., $f_{t}(v')\in W_{\delta_{3}}^{u}(f_{t}w)$:
+suppose it is false, then there exists $\sigma\in[0,t]$ such that
+\begin{equation}
+\delta_{0}<d^{u}(f_{\sigma}v',f_{\sigma}w)\leq\delta_{3}.\label{eq:7.1}
+\end{equation}
+
+
+Notice that $v'\in W_{\kappa\delta}^{cs}(v)\subset B_{t}(v,\kappa\delta)$,
+so 
+\[
+d_{K}(f_{\sigma}v',f_{\sigma}w)\leq d_{K}(f_{\sigma}v',f_{\sigma}v)+d_{K}(f_{\sigma}v,f_{\sigma}w)\leq2\kappa\delta.
+\]
+Thus, $d^{u}(f_{\sigma}v',f_{\sigma}w)\leq2C\kappa\delta<\delta_{3}$
+and we have derived a contradiction (to (\ref{eq:7.1})). \end{proof}
+\begin{lem}[Corollary 7.5]
+The Bowen property holds on $G_{T}(\eta)$ for any H\"{o}lder potential. 
+\end{lem}
+%\begin{proof}%Use lemma above and uniform local product structure at endpoints of good orbits.%\end{proof}
+
+%In particular, this lemma shows that any H\"{o}lder potential has Bowen%property along stable/unstable leaves. Also, (I believe) Bowen property%of any H\"{o}lder potential can be shown using Lemma 7.4 without much%modification (because the main ingredient really is the Bower property%along stable/unstable leaves).
+
+
+\section{Bowen property for geometric potential}
+
+We denote by $J_{v}^{u}$ the unstable Jacobi field along $\gamma_{v}$
+with $J_{v}^{u}(0)=1$. Let $U_{v}^{u}:=(J_{v}^{u})'/J_{v}^{u}$,
+then $U_{v}^{u}$ is a solution to the Ricatti equation 
+\[
+U'+U^{2}+K(f_{t}v)=0.
+\]
+Notice that we also have $U_{v}^{u}(t)=\lambda_{u}(f_{t}v)$. From
+Lemma 7.6 in BCFT, in order to prove $\varphi^{u}$ has Bowen property
+on $\mathcal{G}_{T}(\eta)$, we have only to prove the following proposition: 
+\begin{lem}[Prop 7.7]
+\label{prop:77} For every $\eta>0$, there are $\delta,Q,\xi>0$
+such that given any $(v,T_{0})\in\mathcal{G}_{T}(\eta),w_{1}\in W_{\delta}^{s}(v)$
+and $w_{2}\in f_{-T_{0}}W_{\delta}^{s}(f_{T_{0}}v)$, for every $0\leq t\leq T_{0}$
+we have 
+\[
+|U_{v}^{u}(t)-U_{w_{1}}^{u}(t)|\leq Qe^{-\xi t},
+\]
+\[
+|U_{v}^{u}(t)-U_{w_{2}}^{u}(t)|\leq Q(e^{-\xi t}+e^{-\xi(T_{0}-t)}).
+\]
+
+\end{lem}
+
+\begin{lem}
+\label{lem:710711} For every $\eta>0$, there are $\delta,Q$ such
+that given any $(v,T_{0})\in\mathcal{G}_{T}(\eta),w\in B_{T_{0}}(v,\delta)$,
+for every $0\leq t\leq T_{0}$ we have 
+\[
+|U_{v}^{u}(t)-U_{w}^{u}(t)|\leq Q\exp\left(-\frac{\eta t}{2T}\right)+Q\int_{0}^{t}\exp\left(-\frac{\eta(t-\tau)}{2T}\right)|K(f_{\tau}v)-K(f_{\tau}w)|d\tau.
+\]
+\end{lem}
+\begin{proof}[Proof of Lemma \ref{prop:77}]
+We may choose small $\delta$ so that $w_{1},w_{2}\in\mathcal{G}_{T}(\eta/2)$.
+
+Since $w_{1}\in W_{\delta}^{s}(v)$, the smoothness of $K$ together
+with Lemma \ref{lem:312} implies 
+\[
+|K(f_{\tau}v)-K(f_{\tau}w_{1})|\leq Qd_{K}(f_{\tau}v,f_{\tau}w_{1})\leq Qd^{s}(f_{\tau}v,f_{\tau}w_{1})\leq Q\exp\left(-\frac{\eta\tau}{2T}\right),
+\]
+for any $\tau\in[0,T_{0}]$. Thus by Lemma \ref{lem:710711}: 
+\[
+|U_{v}^{u}(t)-U_{w_{1}}^{u}(t)|\leq Q\exp\left(-\frac{\eta t}{2T}\right)+Qt\exp\left(-\frac{\eta t}{2T}\right)\leq Qe^{-\xi t}.
+\]
+once we fix $\xi<\eta/2T$. Hence $|U_{v}^{u}(t)-U_{w_{1}}^{u}(t)|\leq Qe^{-\xi t}$.
+
+For $w_{2}\in f_{-T_{0}}W_{\delta}^{s}(f_{T_{0}}v)$, we have the
+following estimation for $K$: 
+\[
+|K(f_{\tau}v)-K(f_{\tau}w_{2})|\leq Qd_{K}(f_{\tau}v,f_{\tau}w_{2})\leq Qd^{u}(f_{\tau-T_{0}}f_{T_{0}}v,f_{\tau-T_{0}}f_{T_{0}}w_{2})\leq Q\exp\left(-\frac{\eta(T_{0}-\tau)}{2T}\right)
+\]
+for any $\tau\in[0,T_{0}]$. We use Lemma \ref{lem:710711} again
+and get: 
+\begin{eqnarray*}
+|U_{v}^{u}(t)-U_{w_{2}}^{u}(t)| & \leq & Q\exp\left(-\frac{\eta t}{2T}\right)+Q\int_{0}^{t}\exp\left(-\frac{\eta(T_{0}-\tau)}{2T}\right)d\tau\\
+ & \leq & Q\exp\left(-\frac{\eta t}{2T}\right)+Q\exp\left(-\frac{\eta(T_{0}-t)}{2T}\right)
+\end{eqnarray*}
+
+\end{proof}
+
+\begin{proof}[Proof of Lemma \ref{lem:710711}]
+Without loss of generality, we may assume $U_{w}^{u}(0)\geq U_{v}^{u}(0)$
+and let $U_{1}$ be the solution of the Riccati equation along $\gamma_{v}$
+with $U_{1}(0)=U_{w}^{u}(0)$. We have 
+\[
+|U_{v}^{u}(t)-U_{w}^{u}(t)|\leq|U_{v}^{u}(t)-U_{1}(t)|+|U_{1}(t)-U_{w}^{u}(t)|.
+\]
+Since $U_{w}^{u}(0)\geq U_{v}^{u}(0)$ and both $U_{1}$ and $U_{v}^{u}$
+are Ricatti solutions along $\gamma_{v}$, we have $U_{1}(t)\geq U_{v}^{u}(t)=\lambda_{u}(f_{t}v)$
+for all $t$. Hence 
+\[
+(U_{1}-U_{v}^{u})'=-(U_{1}-U_{v}^{u})(U_{1}+U_{v}^{u})\leq-2\lambda(f_{t}v)(U_{1}-U_{v}^{u}).
+\]
+Thus $(U_{1}(t)-U_{v}^{u}(t))\exp(\int_{0}^{t}2\lambda(f_{s}v)ds)$
+is not increasing. By Lemma \ref{lem:312} we have 
+\begin{eqnarray*}
+0 & \leq & U_{1}(t)-U_{v}^{u}(t)\leq(U_{w}^{u}(0)-U_{v}^{u}(0))\exp\left(-\int_{0}^{t}2\lambda(f_{s}v)ds\right)\\
+ & \leq & Q\exp\left(-\frac{1}{T}\int_{0}^{t}\lambda_{T}(f_{s}v)ds\right)\leq Q\exp\left(-\frac{\eta t}{2T}\right).
+\end{eqnarray*}
+Now we estimate $|U_{1}(t)-U_{w}^{u}(t)|$. We may assume $U_{1}(t)>U_{w}^{u}(t)$
+(the other case is similar). Suppose $U_{1}(s_{0})=U_{w}^{u}(s_{0})$
+at $s_{0}<t$ and $U_{1}(\tau)>U_{w}^{u}(\tau)$ for any $\tau\in(s_{0},t)$.
+By taking difference of the corrsponding Riccati equations, for any
+$\tau\in(s_{0},t)$, we have: 
+\begin{eqnarray*}
+(U_{1}-U_{w}^{u})'(\tau) & = & -(U_{1}(\tau)-U_{w}^{u}(\tau))(U_{1}(\tau)+U_{w}^{u}(\tau))+K(f_{\tau}v)-K(f_{\tau}w)\\
+ & \leq & -2\lambda^{u}(f_{\tau}w)(U_{1}-U_{w}^{u})(\tau)+|K(f_{\tau}v)-K(f_{\tau}w)|.
+\end{eqnarray*}
+Thus 
+\begin{eqnarray*}
+ &  & \frac{d}{d\tau}\left((U_{1}(\tau)-U_{v}^{u}(\tau))\exp\left(\int_{s_{0}}^{\tau}2\lambda^{u}(f_{s}w)ds\right)\right)\\
+ & = & \exp\left(\int_{s_{0}}^{\tau}2\lambda^{u}(f_{s}w)ds\right)((U_{1}-U_{w}^{u})'(\tau)+2\lambda^{u}(f_{\tau}w)(U_{1}-U_{w}^{u})(\tau))\\
+ & \leq & \exp\left(\int_{s_{0}}^{\tau}2\lambda^{u}(f_{s}w)ds\right)|K(f_{\tau}v)-K(f_{\tau}w)|.
+\end{eqnarray*}
+Together with Lemma \ref{lem:312}, we have 
+\begin{eqnarray*}
+U_{1}(t)-U_{v}^{u}(t) & \leq & \exp\left(-\int_{s_{0}}^{t}2\lambda^{u}(f_{s}w)ds\right)\int_{s_{0}}^{t}\exp\left(\int_{s_{0}}^{\tau}2\lambda^{u}(f_{s}w)ds\right)|K(f_{\tau}v)-K(f_{\tau}w)|d\tau\\
+ & = & \int_{s_{0}}^{t}\exp\left(-\int_{\tau}^{t}2\lambda^{u}(f_{s}w)ds\right)|K(f_{\tau}v)-K(f_{\tau}w)|d\tau\\
+ & \leq & Q\int_{s_{0}}^{t}\exp\left(-\frac{1}{T}\int_{\tau}^{t}\lambda_{T}^{u}(f_{s}w)ds\right)|K(f_{\tau}v)-K(f_{\tau}w)|d\tau\\
+ & \leq & Q\int_{0}^{t}\exp\left(-\frac{\eta(t-\tau)}{2T}\right)|K(f_{\tau}v)-K(f_{\tau}w)|d\tau.
+\end{eqnarray*}
+
+\end{proof}
+
+\section{Proof of Theorem C}
+\begin{thm}
+If $M$ is a closed rank 1 surface without focal points, then the
+geodesic flow has a unique equlibrium state $\mu_{q}$ for the potential
+$q\varphi^{u}$ fro each $q\in(-\infty,1)$. This equilibrium state
+satisfies $\mu_{q}(\text{Reg})=1$, is fully supported, Bernoulli,
+and is the weak $*$-limit of weighted regular periodic orbits. Moreover,
+the function $q\mapsto P(q\varphi^{u})$ is $C^{1}$ for $q\in(-\infty,1)$. \end{thm}
+\begin{proof}
+For any $\xi\in T_{v}T^{1}M$, the Sasaki metric of $df_{t}(\xi)$
+is given by 
+\[
+||df_{t}(\xi)||^{2}=J_{\xi}(t)^{2}+J'_{\xi}(t)^{2},
+\]
+where $J_{\xi}$ is a Jacobi field with $J_{\xi}(0)$ and $J'_{\xi}(0)$
+being the vertical and horizontal component of $\xi$. If $\xi\in E_{v}^{u}$,
+then $J_{\xi}$ is an unstable Jacobi field along $\gamma_{v}$ and
+we have $\lambda^{u}(f_{t}v)=J'_{\xi}(t)/J_{\xi}(t)$.
+
+By definition we have 
+\begin{eqnarray*}
+ &  & \varphi^{u}(v)=-\frac{d}{dt}\Big|_{t=0}\log|df_{t}|_{E_{v}^{u}}|=-\frac{1}{2}\frac{d}{dt}\Big|_{t=0}\log(||df_{t}(\xi)||^{2})\\
+ & = & -\frac{J_{\xi}J'_{\xi}+J'_{\xi}J''_{\xi}}{J_{\xi}^{2}+(J'_{\xi})^{2}}(0)=-\frac{J_{\xi}J'_{\xi}(1-K(v))}{J_{\xi}^{2}+(J'_{\xi})^{2}}(0)=-\frac{\lambda^{u}(v)(1-K(v))}{1+\lambda^{u}(v)^{2}},
+\end{eqnarray*}
+where $\xi\in E_{v}^{u}$. Since both $\lambda_{u}$ and $K$ are
+continuous and $\lambda_{u}(v)>0$ and $K(v)<1$ for some $v\in T^{1}M$,
+for Liouville measure $\mu_{L}$ we have 
+\[
+\int_{T^{1}M}\varphi^{u}d\mu_{L}<0.
+\]
+On the other hand, the Lyapunov exponent $\chi(v)$ is the Birkhorff
+average of the function $-\varphi^{u}$(see Section 2.3 in Burns-Gelfert
+``Lyapunov spectrum for geodesic flows of rank 1 surfaces''), therefore
+by Birkhorff Ergodic Theorem and Pesin entropy formula: 
+\[
+h_{\mu_{L}}=\int_{T^{1}M}\chi(v)d\mu_{L}=-\int_{T^{1}M}\varphi^{u}d\mu_{L}>0
+\]
+Thus for $q\in(-\infty,1)$ we have 
+\[
+P(q\varphi^{u})\geq h_{\mu_{L}}+\int q\varphi^{u}d\mu_{L}=(q-1)\int\varphi^{u}d\mu_{L}>0.
+\]
+Notice that $h_{\text{top}}(\text{Sing})=0$ (Gelfert-Ruggiero) and
+$\varphi^{u}\equiv0$ on $\text{Sing}$, so $P(\text{Sing},q\varphi^{u})=0$
+for all $q\in\mathbb{R}$. Upper semicontinuity of entropy gap is
+guarenteed by Liu-Wang, ``Entropy-expansiveness of Geodesic Flows
+on Closed Manifolds without Conjugate Points''. The remaining part
+is similar to BCFT. 
+\end{proof}
+
+\section{Properties of the equilibrium states}
+
+
+\begin{thm*}
+[Theorem A]Let $M$ be a rank 1 Riemannian manifold without focal
+points and ${\cal F}$ be the geodesic flow over $M$. If $\vphi:\ut\to\R$
+is a H\"{o}lder continuous function and $P({\rm Sing},\vphi)<P(\vphi)$,
+then $\vphi$ has a unique equilibrium state $\mu_{\vphi}$. 
+\end{thm*}
+In this section, we aim to prove that$\mu_{\vphi}$ is fully supported,
+$\mu_{\varphi}({\rm Reg})=1$, and is the weak$^{*}$ limit of the
+weighted regular periodic orbits.
+
+
+\begin{prop}
+$\mu_{\vphi}({\rm Reg})=1$. 
+\end{prop}
+
+\begin{proof}
+Since $\mu_{\varphi}$ is the unique equilibrium state for $\vphi$,
+we have $\mu_{\varphi}$ is ergodic (cf. \cite{Climenhaga:2016ut}
+Proposition 4.19). Because ${\rm Sing}$ is ${\cal F}-$invariant
+we have either ${\rm \mu_{\varphi}({\rm Sing)=1}}$ or ${\rm \mu_{\varphi}({\rm Sing)=0}}$.
+Suppose $\mu_{\varphi}({\rm Sing})=1$, then 
+\[
+P({\rm Sing},\varphi)\geq h_{\mu_{\varphi}}({\cal F})+\int\left.\varphi\right|_{{\rm Sing}}\dd\mu_{\varphi}=P(\varphi),
+\]
+which contradicts to the pressure gap condition. Thus $\mu_{\varphi}({\rm Reg})=1$. 
+\end{proof}
+
+
+Recall that $G^{M}$ is the set of orbit segments whose bad parts
+are shorter than $M$.
+
+
+
+
+\begin{lem}
+[\cite{BCFT2017}, Lemma 6.1] \label{lem:6.1}For $M$ is large enough,
+$P(G^{M},\vphi)=P(\vphi)$. Moreover, the measure $\mu_{\phi}$ has
+the lower Gibbs property on $G^{M}$. More precisely, for any $\rho>0$,
+there exists $Q,T,M>0$ such that for every $(v,t)\in G^{M}$ with
+$t\geq T$, 
+\[
+\mu_{\vphi}(B_{t}(v,\rho))\geq Qe^{-tP(\vphi)+\int_{0}^{T}\vphi(f_{s}v)\dd s}.
+\]
+Therefore, for $(v,t)\in G$ and $t$ is large we have $\mu_{\vphi}(B(v,\vphi))>0.$
+\end{lem}
+
+\begin{proof}
+The proof follows verbatim the proof of \cite{BCFT2017} Lemma 6.1.
+\end{proof}
+
+
+
+\begin{lem}
+[\cite{BCFT2017}, Lemma 6.2] Given $\rho,\eta>0$, there exists $\eta_{0}>0$
+so that for any $v\in{\rm Reg}_{T}(\eta)$ and all $t>0$, there are
+$s\geq t$ and $w\in B(v,\rho)$ such that $(w,s)\in G_{T}(\eta_{0})$ 
+\end{lem}
+
+\begin{proof}
+The proof almost follows verbatim the proof of \cite{BCFT2017} Lemma
+6.2. One only needs to replace the \cite{BCFT2017} Lemma 3.9 in their
+proof by Lemma \ref{lem:39}. 
+\end{proof}
+
+
+
+\begin{prop}
+[\cite{BCFT2017}, Lemma 6.3] $\mu_{\vphi}$ in Theorem A is fully
+supported. 
+\end{prop}
+
+\begin{proof}
+??
+\end{proof}
+
+
+
+
+
+Recall that a fixed $\delta>0$
+\begin{itemize}
+\item ${\rm Per}$ the set of primitive periodic geometrically distinct
+geodesics 
+\item ${\rm Per}(T)$ the set of primitive periodic geometrically distinct
+geodesics of length smaller than $T$
+\item ${\rm Per}(T-\delta,T)$ the set of primitive periodic geometrically
+distinct geodesics of length in $[T-\delta,T)$
+\item ${\rm Per}(T,{\rm Reg})$ is the subset of ${\rm Per(T)}$ containing
+all regular geodesics of ${\rm Per(T)}$
+\item ${\rm Per}(T-\delta,T,{\rm Reg})$ is the subset of ${\rm Per}(T-\delta,T)$
+containing all regular geodesics of ${\rm Per}(T-\delta,T)$
+\item $P_{Gur}(\varphi):={\displaystyle \limsup_{T\to\infty}\frac{1}{T}\log\sum_{\tau\in{\rm Per}(T)}e^{\int_{\tau}\varphi}}$
+\item $P_{{\rm Reg}}^{*}(\varphi):={\displaystyle \limsup_{T\to\infty}\frac{1}{T}\log\sum_{\tau\in{\rm Per}(T,{\rm Reg})}e^{\int_{\tau}\varphi}}$
+\end{itemize}
+
+\begin{rem}
+Notice that for any fixed $\delta>0$ we have \begin{enumerate}[font=\normalfont]
+
+\item $P_{Gur}(\varphi)={\displaystyle \limsup_{T\to\infty}\frac{1}{T}\log\sum_{\tau\in{\rm Per}(T-\delta,T)}e^{\int_{\tau}\varphi}}$ 
+
+\item $P_{{\rm Reg}}^{*}(\varphi)={\displaystyle \limsup_{T\to\infty}\frac{1}{T}\log\sum_{\tau\in{\rm Per}(T-\delta,T,{\rm Reg})}e^{\int_{\tau}\varphi}}$
+
+\end{enumerate}
+
+It is a easy computation to show that when $P_{Gur}(\varphi)>0$ (respectctly,
+$P_{{\rm Reg}}^{*}(\varphi)>0$) the above two equalities hold. For
+general cases, recall that, for any $c\in\R$, $P_{Gur}(\varphi+c)=P_{Gur}(\varphi)+c$
+(same for $P_{{\rm Reg}}^{*}(\varphi)$), thus pick $c\in\R$ so that
+$P_{Gur}(\varphi+c)>0$ (respectively, $P_{{\rm Reg}}^{*}(\varphi+c)>0$)
+one can derive the equalities. Also, such $c$ exists because $M$
+is compact, there exists $m$ such that $m\leq\varphi$. Thus we have
+$P_{Gur}(0)+m\leq P_{G}(\varphi)$ where $P_{Gur}(0)\geq0$ by definition
+(same for $P_{{\rm Reg}}^{*}$). 
+\end{rem}
+
+
+
+
+In the case of nonpositive curved rank one Riemannian manifolds, Pollicott
+\cite[Lemma 4, Proposition 2]{Pollicott:1996jq} (also Gelfert-Schapira
+\cite[Theorem 1.1]{Gelfert:2014hn} ) proved that 
+\[
+P_{{\rm Reg}}^{*}(\vphi)\leq P_{Gur}(\vphi)\leq P(\vphi).
+\]
+ In Pollicott's proof, the nonpositive curved condition only used
+to guarantee the following two geometric properties: Let $M$ be a
+Riemannian manifold \begin{enumerate}[font=\normalfont]
+
+\item For any two (unit speed) geodesics $\g_{1}$,$\g_{2}:[0,L]\to M$
+satisfy $d(\g_{1}(t),\g_{2}(t))\leq d(\g_{1}(0),\g_{2}(0))+d(\g_{1}(L),\g_{2}(L))$. 
+
+\item For all $\eta>0$ there exist $\rho>0$ and $L_{0}>0$ such
+that given two geodesics $\g_{1}$,$\g_{2}:[0,L]\to M$ with $L\geq L_{0}$
+and $d_{K}(\dot{\g_{1}}(0),\dot{\g_{2}}(0)),$ $d_{K}(\dot{\g_{1}}(0),\dot{\g_{2}}(0))\leq\rho$
+we have that $d_{K}(\dot{\g_{1}}(t),\dot{\g_{2}}(t))\leq\eta$ for
+all $0\leq t\leq L$.
+
+\end{enumerate}
+
+
+\begin{lem}
+\label{lem:geometric_conditions}Rank one Riemannian manifolds without
+focal points also satisfy the above two geometric conditions.
+\end{lem}
+
+\begin{proof}
+The proof follows the same idea as \cite{Pollicott:1996jq}. Let $M$
+be a Riemannian manifolds without focal points and $\g_{1},\g_{2}:[0,L]\to M$
+be two geodesics. Since $M$ has no focal points, there exists a unique
+geodesic $\g:[0,L]\to M$ such that $\g(0)=\g_{1}(0)$ and $\g(L)=\g_{2}(L)$
+(by parametrizing it with an appropriate constant multiple of its
+arc length). Then the no focal point condition (consider the Jacobi
+field $J$ along $\g_{1}$ given by the variation from $\g_{1}$ to
+$\g$) implies $d(\g(t),\g_{1}(t))\leq d(\g_{2}(L),\g_{1}(L))$, and
+similarly, $d(g(t),g_{2}(t))\leq d(\g_{1}(0),\g_{2}(0))$. Thus we
+have 
+\[
+d(\g_{1}(t),\g_{2}(t))\leq d(\g(t),\g_{1}(t))+d(g(t),g_{1}(t))\leq d(\g_{1}(0),\g_{2}(0))+d(\g_{1}(L),\g_{2}(L)).
+\]
+One can prove the second condition using the same argument. 
+\end{proof}
+
+\begin{cor}
+\label{cor:pressure_ineq}For a compact rank one Riemannian manifold
+$M$ without focal points, we have 
+\[
+P_{{\rm Reg}}^{*}(\vphi)\leq P_{Gur}(\vphi)\leq P(\vphi)
+\]
+ where $\vphi:M\to\R$ is a continuous function.
+\end{cor}
+
+\begin{proof}
+By Lemma \ref{lem:geometric_conditions}, we can follow the proof
+of Lemma 4 and Proposition 2 in \cite{Pollicott:1996jq} without modification.
+\end{proof}
+
+\begin{lem}
+[Closing Lemma; \cite{BCFT2017}, Lemma 4.7] \label{lem:closing_lem}For
+$\ep,\eta>0$, there exists $s=s(\ep)>0$ such that for $(v,t)\in G_{T}(\eta)$
+there are $w\in B_{t}(v,\ep)$ and $\tau\in[0,s(\ep)]$ satisfying
+$f_{t+\tau}w=w$.
+\end{lem}
+
+
+
+
+Assuming the above closing lemma, one has the following equidistribution
+result. We remark that the following two propositions generalize,
+partially, Theorem 1 and Corollary 1 of Amroun \cite{Amroun:2016uw}.
+
+
+
+
+
+
+
+
+\begin{prop}
+\label{prop:pressure_match}Let $\mu_{\vphi}$ be the unique equilibrium
+state given in Theorem A. Then 
+\[
+P_{{\rm Reg}}^{*}(\vphi)=P(\varphi).
+\]
+
+\end{prop}
+
+\begin{proof}
+The proof follows verbatim the proof of \cite{BCFT2017}[Proposition 6.4]. 
+
+More precisely, by Lemma \ref{lem:6.1} and Corollary \ref{cor:pressure_ineq},
+it is enough to show 
+\[
+P(G^{M},\vphi)\leq P_{{\rm Reg}}^{*}(\vphi).
+\]
+
+
+The see this, notice that for $(v,t)\in G^{M}$, there exists $p,s>0$
+such that $(f_{p}v,t-s-p):=(v',t')$ is a good orbit. 
+
+By the uniform continuity of the flow $f_{t}$, we know that for $\ep>0$
+(choosing the same $\ep$ as in the Bowen property) there exists $\ep'>0$,
+w.l.o.g. we may assume $\ep>\ep'$, such that for $v,w\in T^{1}M$
+and $d_{K}(v,w)\leq\ep'$ we have $d_{K}(f_{s}v,f_{s}w)\leq\ep$ for
+all $s\in[-M,M]$. 
+
+By Lemma \ref{lem:closing_lem} (i.e., the closing lemma), for $\ep'>0$
+there exists a regular periodic vector $w\in B_{t'}(v',\ep')$ of
+period $t'+\tau$ for some $\tau\in[0,s(\ep')]$. 
+
+Thus there exists $t_{0}\in[-M,M]$ such that $d_{K}(f_{t_{0}}w,v)\leq\ep$,
+and moreover, $f_{t_{0}}w\in B_{t}(v,\ep)$.
+
+Hence, $\left|\int_{0}^{t}\varphi(f_{s}v)\dd s-\int_{w}\varphi\right|\leq2M\cdot||\varphi||_{\infty}+K$
+where $K$ is the constant given by the Bowen property.
+
+Notice that if $d_{K}(v_{1},v_{2})\leq\ep$ and $(v_{1},t_{1}),(v_{2},t_{2})$
+in a $(s,\delta)-$separated set where $\delta>3\ep$, then the corresponding
+regular periodic vectors $w_{1}$ and $w_{2}$, respectively, are
+distinct (because $\exists t_{1}\in[0,s]$ such that $d_{K}(f_{t_{1}}w_{1},f_{t_{1}}w_{2})>\ep$). 
+
+In other words, for any $(t,\delta)-$separated set $E\subset G_{t}^{M}:=\{(v,t)\in G^{M}\}$,
+we have $E\subset{\rm Per}({\rm Reg},s+s(\ep'))$. Thus 
+\[
+\sum_{(v,t)\in E}e^{\int_{0}^{t}\varphi(f_{s}v)\dd s}\leq\sum_{w\in{\rm Per}(t+s(\ep'),{\rm Reg})}e^{2M\cdot||\varphi||_{\infty}+K+\int_{w}\varphi}
+\]
+
+
+Thus we have 
+\[
+\limsup_{t\to\infty}\frac{1}{t}\log\Lambda(G^{M},\vphi,\delta,t)\leq P_{{\rm Reg}}^{*}(\vphi),
+\]
+ and, hence, 
+\[
+P(G^{M},\vphi)=\lim_{\delta\to0}\limsup_{t\to\infty}\frac{1}{t}\log\Lambda(G^{M},\vphi,\delta,t)\leq P_{{\rm Reg}}^{*}(\vphi).
+\]
+
+\end{proof}
+
+
+
+\begin{prop}
+The unique equilibrium state $\mu_{\varphi}$ is the weak$^{*}$ limit
+of the weighted regular periodic orbits.
+\end{prop}
+
+\begin{proof}
+As pointed out in \cite[Remark 3]{Gelfert:2014hn}, in \cite[Theorem 9.10]{Walters:2000vc}
+Walters proved that the weak{*} limit of the weighted regular periodic
+orbits on $(t,\delta)$-separated set is an equilibrium state for
+$\vphi$ with respect to $P(\varphi,\delta,t)$. 
+
+Notice that in \cite[p. 310]{Knieper:1998ht} Knieper proved that
+${\rm Per}({\rm Reg},t)$ is a $(t,\delta)-$separated set for $\delta$
+is small enoubth. Although his setting was nonpositively curved manifolds,
+his proof works for the no focal points setting as well. 
+
+Moreover, by Proposition \ref{prop:pressure_match} we have $P_{{\rm Reg}}^{*}(\varphi)=P(\varphi)$,
+thus the weak$^{*}$ limit of the weighted regular periodic orbits
+is an equilibrium state for $\varphi$, which is $\mu_{\varphi}$
+by uniqueness. 
+\end{proof}
+
+\begin{prop} The unique equilibrium state $\mu_\varphi$ is fully supported.
+\end{prop}
+
+\begin{proof}[Proof. In words; will check and add more details soon]
+Since $\text{Reg}$ is dense (Keith), it suffice to show that any neighborhood around any $v \in \text{Reg}$ has positive $\mu_\varphi$ measure.
+
+Since $v\in \text{Reg}$, there exists $t \in \mathbb{R}$ such that $\lambda(f_tv)>0$ [for this, we probably need to use $\lambda$ from BCFT, not our $\lambda_T$]. Given be an arbitrary neighborhood $V$ around $v$, we choose an open neighborhood $U$ around $w:=f_tv$ contained in $f_tV$. By $f$-invariance of $\mu_\varphi$, it is sufficient to show that $U$ has positive $\mu_\varphi$ measure. 
+
+Lemma 6.1 from BCFT states that for any $\rho>0$ and $(v,t) \in G(\eta)$ [probably can replace to $G_T(\eta)$ for $T$ fixed; will check before we next meet] with $t$ sufficiently large (depending on $\rho$), then $\mu_\varphi(B(v,\rho))$ is positive. In particular, we would be done if we can show that for any open neighborhood $U$ and any $w \in U$ with $\lambda(w)>0$, there exists $u \in U$, $\eta_0>0$, and $t$ sufficiently large (depending on $\eta_0$) such that $(u,t) \in G_T(\eta_0)$ and $B(u,\eta) \in U$. 
+
+First, using continuity of $\lambda$, find $\tilde{\epsilon}>0$ small such that $(u,\tilde{\epsilon}) \in G_T(\eta/2)$. Fix a good orbit (as in the specification argument) with some hyperbolicity, and start shadowing via specification; begin by $(u,\tilde{\epsilon})$, and shadow the good orbit as many time as necessary to induce the hyperbolicity from the good orbit onto the orbit constructed from the specification. Assuming the specification is performed at the scale small enough, this ensures that the new orbit is contained in $U$, and has the desired property [detail to follow]. This concludes the proof.
+
+\end{proof}
+ 
+ 
+ 
+
+
+
+\section{Creation of Pressure Gap}
+\begin{lem}[Corollary 3.14]\label{cor314}
+For every $R>0$ and $\eta>\eta'>0$, there is $T_1>0$ such that given any $v,w\in T^1M$ with either $f_{T_1}w\in W^u_R(f_{T_1}v)$ or $f_{-T_1}w\in W^s_R(f_{-T_1}v)$, we have $\lambda_T^u(v)\geq \eta\Rightarrow \lambda_T^u(w)\geq \eta'$.
+\end{lem}
+\begin{proof}
+We prove by contradiction. Suppose there exists $R_0>0, \eta_1>\eta_2>0$ such that for any $n\in\mathbb{N}$, there exists $v_n, w_n\in T^1M$ with $f_{n}w_n\in W^u_{R_0}(f_{n}v_n)$ and $\lambda_T^u(v_n)\geq \eta_1, \lambda_T^u(w_n)< \eta_2$.
+
+By taking a subsequnce if necessary, we may assume $v_n\to v_0, w_n\to w_0$. Since $\lambda_T^u(v_0)\geq \eta_1>\eta_2\geq \lambda_T^u(w_0),$ we have $v_0\neq w_0$. By continuity of  unstable foliation, we know that $f_{n}w_0\in W^u_{R_0}(f_{n}v_0)$ for all $n$. Since $d_K(f_nv_0, f_nw_0)\leq e^{\Lambda}d^u(f_nv_0, f_nw_0)\leq e^{\Lambda}R_0$ (cf. formula (4.3) in BCFT), we know that $d_K(f_tv_0, f_tw_0)\leq e^{\Lambda}R_0$ for all $t\in\mathbb{R}$. By Flat strip theorem, $v_0, w_0\in\text{Sing}$ and $\lambda_T^u(v_0)=\lambda_T^u(w_0)=0$, contradiction.
+\end{proof}
+
+\section{Consequences}
+\begin{lem}[Lemma 9.1]
+Let $M$ be a closed rank 1 manifold without focal points and $\varphi:T^{1}M\to\mathbb{R}$
+continuous. If 
+\[
+\sup_{v\in{\rm Sing}}\varphi(v)-\inf_{v\in T^{1}M}\varphi(v)<h_{top}({\mathcal{F}})-h_{top}({\rm Sing}),
+\]
+then $P({\rm Sing})<P(\varphi)$. \end{lem}
+\begin{fact}[Corollary 6.12 \cite{Gelfert:2017tx}]
+Let $M$ be a closed surface without focal points and ${\mathcal{F}}=(f_{t})_{t\in\mathbb{R}}$
+be the geodesic flow on $T^{1}M$. Then $h_{top}({\mathcal{F}})>0=h_{top}({\rm Sing)}$. 
+\end{fact}
+ \bibliographystyle{amsalpha}
+\bibliography{Bib}
+
+\end{document}
