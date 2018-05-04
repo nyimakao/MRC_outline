@@ -227,7 +227,7 @@ In the subsequent sections, we will establish the remaining assumptions of Theor
 \section{Specification}
 \textcolor{blue}{I think it might be good idea to quote details of specification and other properties of the unique eq states from BCFT rather than almost copying the argument; of course we should explain the differences.}
 
-
+\begin{defn}
 A collection $C\subset X\times[0,\infty)$ of orbit segments has \textit{specification}
 at scale $\rho>0$ if there is $\tau=\tau(\rho)$ such that for every
 $(x_{1},t_{1}),\ldots,(x_{n},t_{n})\in C$ there exists $y\in X$
@@ -235,19 +235,21 @@ and a sequence of jumping times $\tau_{1},\ldots,t_{n-1}\in[0,\tau]$
 such that for $s_{0}=\tau_{0}=0$ and $s_{j}=\sum\limits _{i=1}^{j}t_{i}+\sum\limits _{i=1}^{j-1}\tau_{i}$,
 we have 
 \[
-f_{s_{j-1}+\tau_{j-1}}(y)\in B_{(}t_{j})(x_{j},\rho)
+f_{s_{j-1}+\tau_{j-1}}(y)\in B_{(t_{j})}(x_{j},\rho)
 \]
 for every $j\in\{1,\ldots,n\}$. If $C$ has specification at all
 scale, then we say $C$ has specification.
+\end{defn}
 
-For $v\in T^{1}M$ and $T\in\mathbb{R}$, we define $\lambda_{T}^{u}(v)$
-as in the OUTLINES. Given $\varphi\in C(X)$ with $P(\varphi)>P(\text{Sing})$,
-we fix $\eta,T>0$ once and for all such that the pressure of $B_{T}(\eta)$
-is strictly smaller than the pressure of the entire system.
 
-Let $C_{T}(\eta):=\{(v,t)\colon v,f_{t}v\in\text{Reg}_{T}(\eta)\}$
+%For $v\in T^{1}M$ and $T\in\mathbb{R}$, we define $\lambda_{T}^{u}(v)$
+%as in the OUTLINES. Given $\varphi\in C(X)$ with $P(\varphi)>P(\text{Sing})$,
+%we fix $\eta,T>0$ once and for all such that the pressure of $B_{T}(\eta)$
+%is strictly smaller than the pressure of the entire system.
+
+For any $T,\eta>0$, let $C_{T}(\eta):=\{(v,t)\colon v,f_{t}v\in\text{Reg}_{T}(\eta)\}$.  We prove that any $C_T(\eta)$ has specification.
 \begin{thm}
-Given $\eta,T>0$, $C_{T}(\eta)$ has specification. Hence, so does
+Given any $\eta,T>0$, $C_{T}(\eta)$ has specification. Hence, so does
 $G_{T}(\eta)$. 
 \end{thm}
 We collect relevant lemmas to prove the specification.
