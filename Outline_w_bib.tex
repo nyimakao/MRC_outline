@@ -61,7 +61,7 @@
 
 \def\T{\mathcal{T}}
 \def\F{\mathcal{F}}
-
+\def\W{\mathcal{W}}
 \def\lt{\lambda_{T}}
 \def\ut{T^1M}
 \def\gt{G_T}
@@ -134,6 +134,8 @@ Then $(X,\mathcal{F},\varphi)$ has a unique equilibrium state.
 \end{thm}
 
 In our setting of $(T^1S,\mathcal{F})$, we will describe the decomposition on the space of orbits $T^1S \times \mathcal{R}^+$, and verify the assumptions of the abstract Theorem \ref{thm: CT abstract thm} for a H\"older potential $\varphi \colon T^1S \to \mathbb{R}$ satisfying the pressure gap $P(\text{Sing},\varphi)<P(\varphi)$. 
+
+\section{Preliminary}
 
 \section{Pressure Gap and $\lambda_{T}$}
 In what follows, $\varphi \colon T^1S \to \mathbb{R}$ is a H\"older continuous potential with the pressure gap $P(\rm Sing, \varphi) < P(\rm Reg)$; H\"older continuity of $\varphi$ however won't play a role until the section in Bowen property. 
@@ -225,7 +227,7 @@ Flat strip theorem. As in BCFT section 5.3.
 
 In the subsequent sections, we will establish the remaining assumptions of Theorem \ref{thm: CT abstract thm}.
 \section{Specification}
-\textcolor{blue}{I think it might be good idea to quote details of specification and other properties of the unique eq states from BCFT rather than almost copying the argument; of course we should explain the differences.}
+%\textcolor{blue}{I think it might be good idea to quote details of specification and other properties of the unique eq states from BCFT rather than almost copying the argument; of course we should explain the differences.}
 
 \begin{defn}
 A collection $C\subset X\times[0,\infty)$ of orbit segments has \textit{specification}
@@ -247,11 +249,12 @@ scale, then we say $C$ has specification.
 %we fix $\eta,T>0$ once and for all such that the pressure of $B_{T}(\eta)$
 %is strictly smaller than the pressure of the entire system.
 
-For any $T,\eta>0$, let $C_{T}(\eta):=\{(v,t)\colon v,f_{t}v\in\text{Reg}_{T}(\eta)\}$.  We prove that any $C_T(\eta)$ has specification.
-\begin{thm}
-Given any $\eta,T>0$, $C_{T}(\eta)$ has specification. Hence, so does
+For any $T,\eta>0$, we define $C_{T}(\eta):=\{(v,t)\colon v,f_{t}v\in\text{Reg}_{T}(\eta)\}$.  We prove that $C_T(\eta)$ has specification for all $\eta,T>0$.
+\begin{prop}\label{prop: specification}
+For any $\eta,T>0$, $C_{T}(\eta)$ has specification. Hence, so does
 $G_{T}(\eta)$. 
-\end{thm}
+\end{prop}
+
 We collect relevant lemmas to prove the specification.
 \begin{lem}[Lemma 3.10]
 Given $\eta,T>0$, there exists $\theta>0$ so that for any $v\in{\rm Reg}_{T}(\eta)$,
@@ -259,35 +262,55 @@ we have $\measuredangle(E^{u}(f_{t}v),E^{s}(f_{t}v))\geq\theta$ for
 any $-T\leq t\leq T$. \end{lem}
 \begin{proof}
 Assume the contrary. Then there exists $\{(v_{i},t_{i})\}_{i\in\mathbb{N}}\subset{\rm Reg}_{T}(\eta)\times[-T,T]$
-such that $\measuredangle(E^{s}(f_{t_{i}}v_{i}),E^{u}(f_{t_{i}}v_{i}))\to0$.
+such that $$\measuredangle(E^{s}(f_{t_{i}}v_{i}),E^{u}(f_{t_{i}}v_{i}))\to0.$$
 Since ${\rm Reg}_{T}(\eta)\times[-T,T]$ is compact, there exist subsequences
-$t_{i_{j}}\to t_{0}$, and $v_{i_{j}}\to v_{0}$ such that $\measuredangle(E^{s}(f_{t_{0}}v_{0}),E^{u}(f_{t_{0}}v_{0}))=0$,
-that is, $f_{t_{0}}v_{0}\in{\rm Sing}$. On the other hand, ${\rm Reg}_{T}(\eta)$
+$t_{i_{j}}\to t_{0}$, and $v_{i_{j}}\to v_{0}$ such that $\measuredangle(E^{s}(f_{t_{0}}v_{0}),E^{u}(f_{t_{0}}v_{0}))=0$.
+Then, $f_{t_{0}}v_{0}\in{\rm Sing}$. On the other hand, ${\rm Reg}_{T}(\eta)$
 is closed so $v_{0}\in{\rm Reg}_{T}(\eta)$. However, this is a contradiction
 because $\text{Sing}$ is $f_{t}$-invariant. 
 \end{proof}
 %\begin{proof}%Assume the contrary. Then there exists $\{(v_{i},t_i)\}_{i\in\mathbb{N}}\subset{\rm Reg}_{T}(\eta) \times [-T,T]$%such that $\measuredangle(E^{s}(f_{t_i}v_{i}),E^{u}(f_{t_i}v_{i}))\to0$. Noticing%that for such $v_{i}{\rm \in{\rm Reg}}_{T}(\eta)$, by the definition%of ${\rm Reg}_{T}(\eta)$, there exists $s_{i}\in[-T,T]$ so that%$\lambda(f_{s_{i}}v_{i})\geq\frac{\eta}{2T}$. Since ${\rm Reg}_{T}(\eta)\times[-T,T] \times [-T,T]$%is compact, there exist subsequences $s_{i_{j}}\to s$, $t_{i_j} \to t$, and $v_{i_{j}}\to v$%such that $\measuredangle(E^{s}(f_tv),E^{u}(f_tv))=0$, that is, $f_tv\in{\rm Sing}$.%On the other hand, $\lambda(f_{s}(v))\geq\frac{\eta}{2T}$, which implies%that $f_{s}(v)\not\in\text{Sing}$. However, this is a contradiction%because $\text{Sing}$ is invariant. %\end{proof}
 \begin{cor}
 There exists $\delta_{0}>0$ and $\kappa\geq1$ such that the foliations
-$W^{cs}$ and $W^{u}$ have LPS with scale $\delta\in(0,\delta_{0})$
+$\W^{cs}$ and $\W^{u}$ have LPS with scale $\delta\in(0,\delta_{0})$
 with constant $\kappa$. 
 \end{cor}
+
+\begin{defn}
+The foliations $\W^{cs}$ and $\W^u$ have \textit{local product structure} at scale $\delta>0$ with constant $\kappa$ if \color{blue}{bracket operation is well-defined}.
+\end{defn}
+
+
 %\begin{lem} \label{lem:coro45} Given $\eta,T>0$, there exists $\delta>0$ so that%if $v,w\in{\rm Reg}_{T}(\eta)$, and $v',w'$ satisfy $d_{K}(v,v')<\delta$,%and $d_{K}(w,w')<\delta$, then for any $\rho\in(0,\delta]$, there%exists $L$ so that %\[%\left(\bigcup_{0\leq t\leq L}f_{t}(W_{\rho}^{u}(v')\right)\cap W_{\rho}^{cs}(w')\neq\emptyset.%\]%\end{lem}
+
+
 \begin{lem}
 \label{lem: spec bracket} Let $\eta,T>0$ be given. Then, there exists
 $\delta>0$ such that for any $\rho\in(0,\delta)$, there exists $a=a(\delta,\rho)>0$
 such that the following holds: for any $u,v\in N_{\delta}^{K}(\text{Reg}_{T}(\eta))$,
 there exists $\tau\in(0,a)$ and $[v,w]_{\tau}\in T^{1}M$ such that
-$f_{\tau}([v,w]_{\tau})\in W_{\rho}^{cs}(w)$ and $[v,w]_{\tau}\in W_{\rho}^{u}(v)$. 
+$f_{\tau}([v,w]_{\tau})\in \W_{\rho}^{cs}(w)$ and $[v,w]_{\tau}\in \W_{\rho}^{u}(v)$. 
 \end{lem}
-Fix $(v_{0},t_{0})\in C_{T}(\eta)$, $\alpha>1$, and $\epsilon>0$
-such that $W_{\epsilon}^{s}(v_{0})$, and $W_{\epsilon}^{u}(f_{t_{0}}v_{0})$
-belong to $\text{Reg}_{T}(\eta/2)$ and that for any $w,w'\in T^{1}M$
-with $d_{t_{0}}(w,v_{0})<\epsilon$ and $f_{t_{0}}w'\in W_{\epsilon}^{u}(f_{t_{0}}w)$,
+\begin{proof}
+Use transitivity of the flow. 
+\end{proof}
+
+We now sketch the proof of Proposition \ref{prop: specification}. The method is quite similar to the BCFT; the only difference is that we choose the reference orbit $(v_0,t_0)$ sufficiently long with $t_0$ depending on the prescribed $T$.
+
+Define the distance $d_t$.
+
+\begin{proof}[Proof sketch of Proposition \ref{prop: specification}]
+
+
+We begin by fixing $(v_{0},t_{0})\in C_{T}(\eta)$, $\alpha>1$, and $\epsilon>0$
+such that $\W_{\epsilon}^{s}(v_{0})$ and $\W_{\epsilon}^{u}(f_{t_{0}}v_{0})$
+belong to $\text{Reg}_{T}(\eta/2)$ and that for any $w,w'\in T^{1}S$
+with $d_{t_{0}}(w,v_{0})<\epsilon$ and $f_{t_{0}}w'\in \W_{\epsilon}^{u}(f_{t_{0}}w)$,
 we have 
 \[
 d^{u}(f_{t_{0}}w,f_{t_{0}}w')\geq\alpha d^{u}(w,w').
 \]
+
 
 
 Following the proof in the original BCFT, let $0<\rho<\min(\delta,\epsilon)$
@@ -411,6 +434,8 @@ d_{t_{i}}(f_{s_{i}}w_{k},v_{i})\leq\frac{\rho}{3}+\rho'<\rho.
 Since $\rho$ can be taken arbitrarily small, this proves the specification
 property on $C_{T}(\eta)$. 
 \end{enumerate}
+
+\end{proof}
 
 \subsection{ELSE}
 
