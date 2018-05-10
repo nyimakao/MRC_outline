@@ -256,7 +256,7 @@ $G_{T}(\eta)$.
 \end{prop}
 
 We collect relevant lemmas to prove the specification.
-\begin{lem}[Lemma 3.10]
+\begin{lem}[Lemma 3.10]\label{lem: uniform angle}
 Given $\eta,T>0$, there exists $\theta>0$ so that for any $v\in{\rm Reg}_{T}(\eta)$,
 we have $\measuredangle(E^{u}(f_{t}v),E^{s}(f_{t}v))\geq\theta$ for
 any $-T\leq t\leq T$. \end{lem}
@@ -277,7 +277,11 @@ with constant $\kappa$.
 \end{cor}
 
 \begin{defn}
-The foliations $\W^{cs}$ and $\W^u$ have \textit{local product structure} at scale $\delta>0$ with constant $\kappa$ if \color{blue}{bracket operation is well-defined}.
+The foliations $\W^{cs}$ and $\W^u$ have \textit{local product structure} at scale $\d>0$ with constant $\kappa \geq 1$ at $v$ if for any $w_1,w_2 \in B(v,\d)$, the intersection $[w_1,w_2] := \W^{u}_{\k\d}(w_1) \cap \W^{cs}_{\k\d}(w_2)$ is a unique point and satisfies
+\begin{align*}
+d^u(w_1,[w_1,w_2]) &\leq \k d_K(w_1,w_2),\\
+d^{cs}(w_2,[w_1,w_2]) &\leq \k d_K(w_1,w_2).
+\end{align*} 
 \end{defn}
 
 
@@ -292,7 +296,6 @@ there exists $\tau\in(0,a)$ and $[v,w]_{\tau}\in T^{1}M$ such that
 $f_{\tau}([v,w]_{\tau})\in \W_{\rho}^{cs}(w)$ and $[v,w]_{\tau}\in \W_{\rho}^{u}(v)$. 
 \end{lem}
 \begin{proof}
-Use transitivity of the flow. 
 \end{proof}
 
 We now sketch the proof of Proposition \ref{prop: specification}. The method is quite similar to the BCFT; the only difference is that we choose the reference orbit $(v_0,t_0)$ sufficiently long with $t_0$ depending on the prescribed $T$.
@@ -300,9 +303,7 @@ We now sketch the proof of Proposition \ref{prop: specification}. The method is 
 Define the distance $d_t$.
 
 \begin{proof}[Proof sketch of Proposition \ref{prop: specification}]
-
-
-We begin by fixing $(v_{0},t_{0})\in C_{T}(\eta)$, $\alpha>1$, and $\epsilon>0$
+We begin by fixing the reference orbit $(v_{0},t_{0})\in C_{T}(\eta)$, $\alpha>1$, and $\epsilon>0$
 such that $\W_{\epsilon}^{s}(v_{0})$ and $\W_{\epsilon}^{u}(f_{t_{0}}v_{0})$
 belong to $\text{Reg}_{T}(\eta/2)$ and that for any $w,w'\in T^{1}S$
 with $d_{t_{0}}(w,v_{0})<\epsilon$ and $f_{t_{0}}w'\in \W_{\epsilon}^{u}(f_{t_{0}}w)$,
@@ -310,6 +311,22 @@ we have
 \[
 d^{u}(f_{t_{0}}w,f_{t_{0}}w')\geq\alpha d^{u}(w,w').
 \]
+The existence of such orbit segment is guaranteed because we can simply choose $(v_0,t_0) \in G_T(\eta)$ with $t_0$ sufficiently long. Comment of why we need $v_0$
+
+Given any scale $\rho>0$, we claim that we can choose $0<\rho' \ll \rho$ such that $C_T(\eta)$ has specification with scale $\rho$ with the jumping time at most $t_0+2a$ with $a=a(\delta,\rho')$ from Lemma \ref{lem: spec bracket}.
+
+Let $(v_1,t_1),\ldots,(v_n,t_n) \in C_T(\eta)$ be given. We set $(w_1,s_1) = (v_1,t_1)$, and we will inductively define orbit segments $(w_j,s_j)$ for $j \geq 2$ with $w_j \in \W^u_{\rho}(v_1)$ and $f_{s_j}w_j \in \W^{cs}_{\rho'}(f_{t_j}v_j)$ such that $(w_j,s_j)$ shadows the orbit segments
+$(v_1,t_1) \to (v_{0},t_{0}) \to (v_{2},t_{2}) \to (v_{0},t_{0}) \to (v_{3},t_{3})\to (v_{0},t_{0}) \to \ldots,(v_{j},t_{j})$ with scale $\rho$.
+
+Suppose $(w_j,s_j)$ with the properties listed above is given. We want to define $(w_{j+1},s_{j+1})$ such that it $w_{j+1}$ closely follows the orbit of $w_j$ for time $s_j$, then (1) jumps to (with transition time $\leq a$) and shadows $v_0$ for time $t_0$, and then (2) jumps to (again with transition time $\leq a$) to and shadows $v_{j+1}$ for time $t_{j+1}$. Since Lemma \ref{lem: spec bracket} allows only one jump at a time, we define auxiliary orbit segments $(u_j,l_j)$ by applying Lemma \ref{lem: spec bracket} to $f_{s_j}w_j$ and $v_0$ which then satisfies (1). We then obtain $(w_{j+1},s_{j+1})$ satisfying (2) again from Lemma \ref{lem: spec bracket} applied to $f_{l_j}u_j$ and $v_{j+1}$. In all of these joining orbits, we take the scale to be $\rho'$. If $\rho'$ is initially chosen sufficiently small, then $f_{s_j}w_j$ and $f_{l_j}u_j$ are respectively close enough to $f_{t_j}v_j,f_{t_0}v_0 \in  \rm Reg_T(\eta)$, and hence the existence of $u_j$ and $w_{j+1}$ via Lemma \ref{lem: spec bracket} is guaranteed.
+Clearly, $(w_{j+1},s_{j+1})$ defined inductively as such has transition time between consecutive $v_i$'s bounded above by $t_0+2a$.
+
+We would be done if each $(w_j,s_j)$ $\rho$-shadows every $(v_i,t_i)$ upto $i \leq j$. It is sufficient to show that for each $i \leq j$, the $d^u$ distance between $f_{s_i}w_j$ and $f_{s_i}w_i$ (note both $w_i$ and $w_j$ lie in $\W^{u}(v_1)$, so the $d^u$ makes sense) and that $d^{cs}$ distance between $f_{s_i - t_i}w_i$ and $v_i$ are uniformly bounded depending only on $\rho'$. The latter is immediate because $f_{s_i-t_i}w_i \in \W_{\rho'}^{cs}(v_i)$ by construction and $d^{cs}$ doesn't increase in forward time. For the former, notice that each $i \leq m \leq j$, $d^u(f_{s_i}w_m,f_{s_i}u_m)$ is at most $\rho'\alpha^{-(m-i)}$ because $d^u(f_{s_m}w_m,f_{s_m}u_m) \leq \rho'$ from the construction of $u_m$ and each time $f_{s_m}u_m$ and $f_{s_m}w_m$ passes through the reference orbit $(v_0,t_0)$ in backward time, their $d^u$ distance decrease by factor of at least $\alpha$. The same argument applied to $f_{s_i}u_m$ and $f_{s_{i}}w_{m+1}$ gives $d^u(f_{s_i}u_m,f_{s_i}w_{m+1}) \leq \rho'\alpha^{1+m-i}$. It then follows that the sum appearing in the right hand side of the inequality \begin{align*}
+d^u(f_{s_i}w_j,f_{s_i}w_i) &\leq \sum\limits_{m=i}^{j-1}d^u(f_{s_i}w_m,f_{s_i}u_m)+ d^u(f_{s_i}u_m,f_{s_i}w_{m+1})
+\end{align*} 
+is uniformly bounded depending only on $\rho'$. 
+Hence, with a sufficiently small initial choice of $\rho'$, the orbit segment $(w_n,s_n)$ $\rho$-shadows (with transition time $t_0+2a$) all $(v_i,t_i)$ with $i \leq n$. 
+\\\\\\\\\\\\\\\\
 
 
 
